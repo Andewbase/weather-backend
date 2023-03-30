@@ -2,7 +2,7 @@ package ru.weathertestings.database.city
 
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.insert
-import org.jetbrains.exposed.sql.select
+import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
 object CityModel: Table("city") {
@@ -18,17 +18,18 @@ object CityModel: Table("city") {
         }
     }
 
-    fun fetchCity(name: String): CityDTO?{
+    fun fetchAllCity(): List<CityDTO>{
         return try{
             transaction {
-                val cityModel = CityModel.select{ CityModel.name.eq(name) }.single()
-                CityDTO(
-                    name = cityModel[CityModel.name],
-                    type = cityModel[type]
-                )
+               CityModel.selectAll().toList().map {
+                   CityDTO(
+                       name = it[name],
+                       type = it[type]
+                   )
+               }
             }
         }catch (e: Exception){
-          null
+          emptyList()
         }
     }
 }

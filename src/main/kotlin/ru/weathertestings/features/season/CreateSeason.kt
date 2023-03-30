@@ -1,4 +1,4 @@
-package ru.weathertestings.features
+package ru.weathertestings.features.season
 
 import kotlinx.serialization.Serializable
 

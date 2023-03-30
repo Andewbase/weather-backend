@@ -1,9 +1,9 @@
 package ru.weathertestings.cache
 
-import ru.weathertestings.features.CreateCity
+import ru.weathertestings.features.city.CreateCityRequest
 
 object InMemoryCache {
 
-    var cityList: MutableList<CreateCity> = mutableListOf()
+    var cityList: MutableList<CreateCityRequest> = mutableListOf()
 
 }

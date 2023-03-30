@@ -6,7 +6,7 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import ru.weathertestings.database.season.SeasonDTO
 import ru.weathertestings.database.season.SeasonModel
-import ru.weathertestings.features.CreateSeason
+import ru.weathertestings.features.season.CreateSeason
 import ru.weathertestings.utils.isValidName
 
 class SeasonController(val call: ApplicationCall) {

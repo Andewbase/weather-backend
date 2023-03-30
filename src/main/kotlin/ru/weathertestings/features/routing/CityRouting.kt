@@ -11,9 +11,9 @@ fun Application.configureCreateCity(){
             cityController.registrNewCity()
         }
 
-        get ("/city"){
+        post("/city/search"){
             val cityController = CityController(call)
-            cityController.perfomCity()
+            cityController.perfomCitySearch()
         }
     }
 }
