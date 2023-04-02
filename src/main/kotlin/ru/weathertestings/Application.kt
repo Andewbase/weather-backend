@@ -11,7 +11,7 @@ import ru.weathertestings.plugins.*
 fun main() {
 
     Database.connect("jdbc:postgresql://localhost:5432/weather", driver = "org.postgresql.Driver",
-        user = "postgres", password = "XXXX")
+        user = "postgres", password = "xxxx")
 
     embeddedServer(CIO, port = 8080, host = "0.0.0.0", module = Application::module)
         .start(wait = true)
